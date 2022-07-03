@@ -1,0 +1,76 @@
+Step 1: Flask Installation and Server Setup
+We are assuming that you have already installed Python,
+and it’s up to date. So let’s set up our project and set up a
+virtual environment.
+
+Why do we need a virtual environment?
+
+A virtual environment is used to create an isolated Python environment
+for different projects. We create virtual environments because different
+projects have different dependencies. Also, it helps to keep the global 
+packages folder clean.
+
+So now open the terminal type the below command:
+pip3 install virtualenv
+Once it’s installed, let’s create a directory or folder for your project. 
+We are using flask-test as the folder name, but you can pick any name for 
+your project.
+
+mkdir flask-test
+Then, change the directory:
+
+cd flask-test
+Now it’s time to create a virtual environment for our project so that the 
+dependencies don’t mess up the global package folder.
+
+Execute the below command now:
+
+virtualenv .
+And then,
+
+source bin/activate
+Explanation: What we are doing here is we are telling the module that the 
+current folder can be used for the virtual environment, and then it is activating 
+the virtual environment in the second step.
+
+Now once you have activated the virtual environment, let’s install the Flask 
+package in that environment.
+
+Now run the below command:
+
+Python3 -m pip install Flask
+So far, we have created our project folder, installed and created a virtual 
+environment for our project, and installed Flask in the environment. Let’s 
+head towards Step 2.
+
+Step 2: Let’s Write Some Code
+Now create a file app.py and paste the below code:
+
+from flask import Flask
+app = Flask(__name__)
+
+
+@app.route('/')
+def hello_world():
+    return 'This is my first API call!'
+Make sure to save your app.py file to the current directory.
+
+Code Explanation: First, we are importing the flask module into our 
+application and then defining the API route. The @ is used for defining 
+the API route. We’re passing /, which means this is our base route.
+
+Step 3: Running the Server and Making the First API Call
+Once you’re done with the coding part, it’s time to run our Flask server 
+and make our first API call.
+
+To run the server, execute the below command:
+
+flask run
+You should see the below output on the terminal:
+
+* Environment: production
+   WARNING: This is a development server. Do not use it in a production 
+sdeployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
